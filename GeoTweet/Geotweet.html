@@ -3,30 +3,45 @@
   <head>
     <meta charset="utf-8">
     <title>GeoTweet</title>
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-    <script src="Geotweet.js"></script>
+    <script type="text/javascript" src="geotweet.js"></script>
   </head>
   <body>
-    <h1>GeoTweet</h1>
+    <div id="header">
+      <h1>GeoTweet</h1>
+    </div>
+
     <div id="mapid"></div>
-    <div id="Info_pos">
-      <h2>Latitude : </h2>
-      <div id="lat"></div>
-      <h2>Longitude : </h2>
-      <div id="long"></div>
+    <div id='Carte_option'>
+      <div id="Info_pos">
+        <h2>Position de la station:</h2>
+        <div id="latitude">
+          <h3>Latitude : </h3>
+          <div id="lat"></div>
+        </div>
+        <div id="longitude">
+          <h3>Longitude : </h3>
+          <div id="long"></div>
+        </div>
+      </div>
     </div>
     <div id="Camera">
       <label>Déplacement libre de la caméra<input type="checkbox" name="Camera" id="Camera_b"/></label>
     </div>
+
+
     <div id="Tweet">
       <h2>Tweet</h2>
-      <label>Smartphone<input type="radio" name="tweet" value="0" id = "smartphone"/></label>
-      <label>Réflexe<input type="radio" name="tweet" value="1" id = "reflexe"/></label>
-      <label>Téléobjectif<input type="radio" name="tweet" value="2" id = "teleobjectif"/></label>
-      <input type="submit" name="envoi" value="Tweet comme Pesquet" id = "tweeter">
+      <form id="choix_tweet" >
+        <p><label>Smartphone<input type="radio" name="tweet" value="6" id = "smartphone" checked="checked"/></label></p>
+        <p><label>Réflexe<input type="radio" name="tweet" value="10" id = "reflexe"/></label></p>
+        <p><label>Téléobjectif<input type="radio" name="tweet" value="15" id = "teleobjectif" /></label></p>
+        <p><input type=submit name="envoi" value="Tweet comme Pesquet" id = "tweeter" onclick="this.form.tweet"></p>
+      </form>
+      <img id="img_tweet" src="Images/7304043550_ee9d62e937_b.jpg">
+      <div id="Text_tweet">The blue planet!</div>
     </div>
 
   </body>
